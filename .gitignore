@@ -8,6 +8,7 @@ __pycache__/
 
 # Distribution / packaging
 .Python
+pretrained_weights/
 build/
 develop-eggs/
 dist/

@@ -1,0 +1,47 @@
+train:
+    seeds: [34385, 45840, 62400, 2646, 38844]
+    epochs: 120
+    lr: 1e-4
+    batch_size: 16
+    num_workers: 1
+    patience: ${train.epochs} # No early stopping (patience == epochs)
+    step_scheduler: true
+
+model:
+    input_tdim: 512
+    imagenet_pretrained: false
+    audioset_pretrained: false
+
+metadata:
+    dataset_csv_path: ../../data/blueberry_chile/metadata/planilla_MADRE_2021+2022_los_rios+maule.xlsx
+    especies_column_name: "especie"
+    # output_dir: weights/ast-${model.imagenet_pretrained}_imagenet-${model.audioset_pretrained}_audioset-${data.use_mixup}_mixup-${data.use_specaug}_specaug-True_rand_sampling-${train.epochs}-${model.input_tdim}_tdim-${data.apply_audio_norm}_norm-${data.mixup_alpha}-${data.freqm}_${data.timem}-${data.use_filter_augment}_filter
+    output_dir: weights/ast-${model.imagenet_pretrained}_imagenet-${model.audioset_pretrained}_audioset-${data.use_mixup}_mixup-${data.use_specaug}_specaug-${data.padding_type}-${train.epochs}-${model.input_tdim}_tdim-${data.apply_audio_norm}_norm-${data.mixup_alpha}-${data.freqm}_${data.timem}-${data.use_filter_augment}_filter
+    preloaded_data_path: ../../segmented_preloaded_data/Bees_blueberry_2020_and_2021_updated_16k
+
+data:
+    period: 2
+    class_num: 15
+    target_length: 512
+    sample_rate: 16000
+
+    use_mixup: true
+    mixup_alpha: 0.2 # default: .5
+
+    freqm: 24 # 24 or 48
+    timem: 96 # 96 or 192
+    use_specaug: true
+
+    spec_norm_mean: 4.26
+    spec_norm_std: 4.57
+
+    # use_rand_trunc: true
+    padding_type: "rand_trunc" # 'rand_trunc', 'fixed_trunc' and 'repeat'
+
+    use_filter_augment: false
+
+    apply_audio_norm: false
+    target_dbfs: -45.038973141280266
+
+test:
+    score_dir: ../../scores-20_21

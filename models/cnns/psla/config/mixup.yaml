@@ -1,0 +1,69 @@
+train:
+    epochs: 120
+    batch_size: 16
+    lr: 1e-3
+    num_workers: 10
+
+    patience: ${train.epochs} # No early stopping (patience == epochs)
+    consecutive_trains: 5
+
+    classes_num: 15
+    step_scheduler: true # Use Scheduler
+    optimizer: "adam" # adam, adamw or adan
+    scheduler: "linear" # linear, polynomial or cosine
+    warmup_steps: 0.1 # Percentage, default: 10% (0.1)
+
+    weight_decay: 5e-7
+
+feature_extractor:
+    sample_rate: 32000
+    mel_bins: 128
+    target_length: 512
+
+data_augmentation:
+    use_audio_mixup: true
+    mixup_alpha: .5
+
+    use_specaug: false
+    freqm: 48
+    timem: 96
+
+    rand_sampling: false
+
+    insert_noise: false
+
+model:
+    b: 2
+    head_num: 4
+    pretrained: false
+    imagenet_pretrained: false
+    pretrained_checkpoint_path: pretrained_models/as_mdl_0.pth
+
+data:
+    seeds: [34385, 45840, 62400, 2646, 38844]
+    behavior: both
+    period: 2
+
+    data_path: ../../
+    preloaded_data_path: ../../segmented_preloaded_data/Bees_blueberry_2020_and_2021_updated
+    dataset_csv_path: ../../data/blueberry_chile/metadata/planilla_MADRE_2021+2022_los_rios+maule.xlsx
+
+    spec_norm_mean: -4.2677393
+    spec_norm_std: 4.5689974
+
+    frac_train: 0.50
+    frac_test: 0.50
+    output_dir: weights/PSLA-5x2cv-${model.pretrained}_pretrained-${data_augmentation.use_audio_mixup}_audio_mixup-${data_augmentation.use_specaug}_specaug-${data_augmentation.rand_sampling}_rand_sampling-${data_augmentation.insert_noise}_insert_noise-${train.epochs}_epochs-${feature_extractor.target_length}-${data_augmentation.mixup_alpha}-${data_augmentation.freqm}-${data_augmentation.timem}
+    # output_dir: weights/PSLA-5x2cv-${model.pretrained}_pretrained-${data_augmentation.use_audio_mixup}_audio_mixup-${data_augmentation.use_specaug}_specaug-${data_augmentation.rand_sampling}_rand_sampling-${data_augmentation.insert_noise}_insert_noise-${train.epochs}_epochs-${feature_extractor.target_length}-${data_augmentation.mixup_alpha}-${data_augmentation.freqm}-${data_augmentation.timem}-f_ip
+
+metadata:
+    especies_column_name: "especie"
+    genre_column_name: "genero"
+    audio_name_column_name: "audio"
+    begin_time_column_name: "begin time (s)"
+    end_time_column_name: "end time (s)"
+    behavior_column_name: "behavior"
+
+scores:
+    scores_path: ../../scores-20_21
+

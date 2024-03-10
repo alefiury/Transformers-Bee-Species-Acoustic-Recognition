@@ -1,0 +1,67 @@
+
+train:
+    seeds: [34385, 45840, 62400, 2646, 38844]
+    period: 2
+    epochs: 120
+    lr: 1e-3
+    batch_size: 32
+    num_workers: 8
+    patience: 120
+    consecutive_trains: 5
+    classes_num: 15
+    sample_rate: 16000
+    encoder: efficientnetv2_rw_s
+    re_initialize: false
+    re_initialize_steps: 30
+
+data:
+    feature_extractor: log_melspec
+
+    behavior: both
+    mixup_alpha: 0.5
+    step_scheduler: true
+
+    f_min: 0
+    f_max: 8000
+    n_mfcc: 40
+
+    window_size: 1024
+    hop_size: 320
+    mel_bins: 64
+
+    use_mixup: false
+    use_specaug: true
+    rand_sampling: true
+    use_filter_augment: false
+
+    imagenet_pretrained: false
+
+    tomato_pretrained: false
+
+    apply_norm: false
+    target_dbfs: -45.038973141280266
+
+    frac_train: 0.50
+    frac_test: 0.50
+
+    output_dir: weights/cnn-${data.imagenet_pretrained}_imagenet-${data.use_mixup}_mixup-${data.use_specaug}_specaug-${data.rand_sampling}_rand_sampling-${data.use_filter_augment}_filter_augment-${data.feature_extractor}-${train.epochs}-${data.apply_norm}_norm-${train.re_initialize}_reinit
+    data_path: ../../data/blueberry_chile/2020_2021
+    preloaded_data_path: ../../segmented_preloaded_data/Bees_blueberry_2020_and_2021_updated_16k
+    dataset_csv_path: ../../data/blueberry_chile/metadata/planilla_MADRE_2021+2022_los_rios+maule.xlsx
+
+    pre_train_output_dir: weights/tomato_pre_trained/effnetv2_rw_t-5x2cv
+    pre_train_data_path: ../../data/projeto_tomate
+    pre_train_dataset_csv_path: ../projeto_tomate.xlsx
+
+
+metadata:
+    especies_column_name: "especie"
+    genre_column_name: "genero"
+    audio_name_column_name: "audio"
+    begin_time_column_name: "begin time (s)"
+    end_time_column_name: "end time (s)"
+    behavior_column_name: "behavior"
+
+
+test:
+    score_dir: ../../scores-20_21

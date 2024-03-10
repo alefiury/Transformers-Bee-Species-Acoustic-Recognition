@@ -1,0 +1,51 @@
+
+
+train:
+    epochs: 120
+    batch_size: 32
+    lr: 1e-3
+    num_workers: 8
+
+    patience: ${train.epochs} # No early stopping (patience == epochs)
+    consecutive_trains: 5
+
+    classes_num: 15
+    step_scheduler: true
+
+feature_extractor:
+    sample_rate: 32000
+    window_size: 1024
+    hop_size: 320
+    mel_bins: 64
+    fmin: 0
+    fmax: 16000
+
+data_augmentation:
+    use_mixup: false
+    mixup_alpha: .5
+    use_specaug: false
+    rand_sampling: true
+
+model:
+    freeze_base: false
+    pretrained: false
+    pretrained_checkpoint_path: pretrained_weights/Cnn14_mAP=0.431.pth
+
+data:
+    seeds: [34385, 45840, 62400, 2646, 38844]
+    behavior: both
+    period: 2
+
+    apply_norm: false
+    target_dbfs: -45.038973141280266
+
+    data_path: ../../data/blueberry_chile/2020_2021
+    preloaded_data_path: ../../segmented_preloaded_data/Bees_blueberry_2020_and_2021_updated
+    dataset_csv_path: ../../data/blueberry_chile/metadata/planilla_MADRE_2021+2022_los_rios+maule.xlsx
+
+    frac_train: 0.50
+    frac_test: 0.50
+    output_dir: weights/panns_cnn14-${model.pretrained}_pretrained-${data_augmentation.use_mixup}_mixup-${data_augmentation.use_specaug}_specaug-${feature_extractor.mel_bins}_melbins-${feature_extractor.fmin}_fmin-${feature_extractor.fmax}_fmax-${data_augmentation.rand_sampling}_randSampling-${data.apply_norm}_norm
+
+scores:
+    scores_path: ../../scores-20_21
