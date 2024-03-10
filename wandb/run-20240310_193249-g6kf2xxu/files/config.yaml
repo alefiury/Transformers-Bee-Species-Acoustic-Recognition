@@ -1,0 +1,196 @@
+wandb_version: 1
+
+seeds:
+  desc: null
+  value:
+  - 34385
+  - 45840
+  - 62400
+  - 2646
+  - 38844
+period:
+  desc: null
+  value: 2
+epochs:
+  desc: null
+  value: 120
+lr:
+  desc: null
+  value: 0.001
+batch_size:
+  desc: null
+  value: 32
+num_workers:
+  desc: null
+  value: 8
+patience:
+  desc: null
+  value: 120
+consecutive_trains:
+  desc: null
+  value: 5
+classes_num:
+  desc: null
+  value: 15
+sample_rate:
+  desc: null
+  value: 16000
+encoder:
+  desc: null
+  value: efficientnetv2_rw_s
+re_initialize:
+  desc: null
+  value: false
+re_initialize_steps:
+  desc: null
+  value: 30
+feature_extractor:
+  desc: null
+  value: log_melspec
+behavior:
+  desc: null
+  value: both
+mixup_alpha:
+  desc: null
+  value: 0.5
+step_scheduler:
+  desc: null
+  value: true
+f_min:
+  desc: null
+  value: 0
+f_max:
+  desc: null
+  value: 8000
+n_mfcc:
+  desc: null
+  value: 40
+window_size:
+  desc: null
+  value: 1024
+hop_size:
+  desc: null
+  value: 320
+mel_bins:
+  desc: null
+  value: 64
+use_mixup:
+  desc: null
+  value: false
+use_specaug:
+  desc: null
+  value: true
+rand_sampling:
+  desc: null
+  value: true
+use_filter_augment:
+  desc: null
+  value: false
+imagenet_pretrained:
+  desc: null
+  value: false
+tomato_pretrained:
+  desc: null
+  value: false
+apply_norm:
+  desc: null
+  value: false
+target_dbfs:
+  desc: null
+  value: -45.038973141280266
+frac_train:
+  desc: null
+  value: 0.5
+frac_test:
+  desc: null
+  value: 0.5
+output_dir:
+  desc: null
+  value: weights/cnn-False_imagenet-False_mixup-True_specaug-True_rand_sampling-False_filter_augment-log_melspec-120-False_norm-False_reinit
+data_path:
+  desc: null
+  value: ../../data/blueberry_chile/2020_2021
+preloaded_data_path:
+  desc: null
+  value: ../../segmented_preloaded_data/Bees_blueberry_2020_and_2021_updated_16k
+dataset_csv_path:
+  desc: null
+  value: ../../data/blueberry_chile/metadata/planilla_MADRE_2021+2022_los_rios+maule.xlsx
+pre_train_output_dir:
+  desc: null
+  value: weights/tomato_pre_trained/effnetv2_rw_t-5x2cv
+pre_train_data_path:
+  desc: null
+  value: ../../data/projeto_tomate
+pre_train_dataset_csv_path:
+  desc: null
+  value: ../projeto_tomate.xlsx
+especies_column_name:
+  desc: null
+  value: especie
+genre_column_name:
+  desc: null
+  value: genero
+audio_name_column_name:
+  desc: null
+  value: audio
+begin_time_column_name:
+  desc: null
+  value: begin time (s)
+end_time_column_name:
+  desc: null
+  value: end time (s)
+behavior_column_name:
+  desc: null
+  value: behavior
+score_dir:
+  desc: null
+  value: ../../scores-20_21
+_wandb:
+  desc: null
+  value:
+    python_version: 3.8.10
+    cli_version: 0.16.4
+    framework: huggingface
+    huggingface_version: 4.38.0.dev0
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    start_time: 1710099169.0
+    t:
+      1:
+      - 1
+      - 5
+      - 11
+      - 41
+      - 49
+      - 50
+      - 51
+      - 53
+      - 55
+      - 63
+      - 64
+      2:
+      - 1
+      - 5
+      - 11
+      - 41
+      - 49
+      - 50
+      - 51
+      - 53
+      - 55
+      - 63
+      - 64
+      3:
+      - 16
+      - 17
+      - 23
+      - 37
+      4: 3.8.10
+      5: 0.16.4
+      6: 4.38.0.dev0
+      8:
+      - 5
+      10:
+      - 3
+      13: linux-x86_64

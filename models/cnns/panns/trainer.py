@@ -8,10 +8,10 @@ from tqdm import tqdm
 from omegaconf import DictConfig
 from transformers import get_linear_schedule_with_warmup
 
-from utils.utils import Mixup, do_mixup
-from model import Transfer_Cnn14, Cnn14
-from utils.losses import BCELossModified
-from utils.scores import model_accuracy, model_f1_score
+from models.cnns.panns.utils.utils import Mixup, do_mixup
+from models.cnns.panns.model import Transfer_Cnn14, Cnn14
+from models.cnns.panns.utils.losses import BCELossModified
+from models.cnns.panns.utils.scores import model_accuracy, model_f1_score
 
 device = ('cuda' if torch.cuda.is_available() else 'cpu')
 # Logger

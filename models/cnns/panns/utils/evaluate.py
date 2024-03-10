@@ -12,13 +12,13 @@ import timm
 from tqdm import tqdm
 import librosa
 
-from model import Cnn14, Transfer_Cnn14
+from models.cnns.panns.model import Cnn14, Transfer_Cnn14
 
 import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.metrics import confusion_matrix
 
-from utils.utils import formatter_single
+from models.cnns.panns.utils.utils import formatter_single
 
 device = ('cuda' if torch.cuda.is_available() else 'cpu')
 

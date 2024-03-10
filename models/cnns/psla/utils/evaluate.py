@@ -17,9 +17,9 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.metrics import confusion_matrix
 
-from models.Models import EffNetAttention
+from models.cnns.psla.models.Models import EffNetAttention
 
-from utils.utils import formatter_single
+from models.cnns.psla.utils.utils import formatter_single
 
 device = ('cuda' if torch.cuda.is_available() else 'cpu')
 

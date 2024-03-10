@@ -11,10 +11,10 @@ from sklearn import metrics
 from omegaconf import OmegaConf
 from datasets import load_from_disk
 
-from utils.utils import formatter_single, calculate_stats_norm
-from utils.data_generator import DataGenerator
-from utils.evaluate import test_model
-from trainer import train_model
+from models.cnns.psla.utils.utils import formatter_single, calculate_stats_norm
+from models.cnns.psla.utils.data_generator import DataGenerator
+from models.cnns.psla.utils.evaluate import test_model
+from models.cnns.psla.trainer import train_model
 
 log = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO, format=formatter_single.FORMATTER)

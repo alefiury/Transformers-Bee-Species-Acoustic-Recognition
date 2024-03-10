@@ -10,11 +10,11 @@ import torch.nn.functional as F
 from omegaconf import DictConfig
 from transformers import get_linear_schedule_with_warmup
 
-from utils.adan import Adan
-from utils.scheduler import CosineWarmupLR, PolynomialLR
-from utils.losses import BCELossModified
-from models.Models import EffNetAttention
-from utils.scores import model_accuracy, model_f1_score
+from models.cnns.psla.utils.adan import Adan
+from models.cnns.psla.utils.scheduler import CosineWarmupLR, PolynomialLR
+from models.cnns.psla.utils.losses import BCELossModified
+from models.cnns.psla.models.Models import EffNetAttention
+from models.cnns.psla.utils.scores import model_accuracy, model_f1_score
 
 device = ('cuda' if torch.cuda.is_available() else 'cpu')
 # Logger

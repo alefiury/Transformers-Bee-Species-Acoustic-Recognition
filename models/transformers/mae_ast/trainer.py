@@ -10,11 +10,11 @@ import torch.nn.functional as F
 from omegaconf import DictConfig
 from transformers import get_linear_schedule_with_warmup
 
-from utils.adan import Adan
-from utils.schedulers import CosineWarmupLR, PolynomialLR
-from mae_ast_finetuning_model import Transfer_MAE_AST
-from utils.losses import BCELossModified, clip_ce
-from utils.scores import model_accuracy, model_f1_score
+from models.transformers.mae_ast.utils.adan import Adan
+from models.transformers.mae_ast.utils.schedulers import CosineWarmupLR, PolynomialLR
+from models.transformers.mae_ast.mae_ast_finetuning_model import Transfer_MAE_AST
+from models.transformers.mae_ast.utils.losses import BCELossModified, clip_ce
+from models.transformers.mae_ast.utils.scores import model_accuracy, model_f1_score
 
 device = ('cuda' if torch.cuda.is_available() else 'cpu')
 # Logger

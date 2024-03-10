@@ -1,9 +1,10 @@
+import timm
 import torch
 import torch.nn as nn
-import timm
 from torchlibrosa.augmentation import SpecAugmentation
 
-from utils.utils import do_mixup
+from models.cnns.effnetv2.utils.utils import do_mixup
+
 
 class Cnn_Model(nn.Module):
     def __init__(

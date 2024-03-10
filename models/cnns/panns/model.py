@@ -6,7 +6,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-from utils.utils import do_mixup
+from models.cnns.panns.utils.utils import do_mixup
 
 log = logging.getLogger(__name__)
 

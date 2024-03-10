@@ -3,7 +3,7 @@ from copy import deepcopy
 
 import torch
 
-from model import Cnn_Model
+from models.cnns.effnetv2.model import Cnn_Model
 
 device = ('cuda' if torch.cuda.is_available() else 'cpu')
 

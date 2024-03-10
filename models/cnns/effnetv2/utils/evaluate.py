@@ -9,7 +9,7 @@ import numpy as np
 from tqdm import tqdm
 from sklearn import metrics
 
-from model import Cnn_Model
+from models.cnns.effnetv2.model import Cnn_Model
 
 device = ('cuda' if torch.cuda.is_available() else 'cpu')
 

@@ -30,6 +30,7 @@ def main() -> None:
         help="YAML file with configurations"
     )
     parser.add_argument(
+        "-m",
         "--choose-model",
         choices=[
             "effnet",

@@ -28,7 +28,7 @@ def model_store_training(
         cv: int = None
     ):
     train_model_method = None
-    if model_name == 'effnetv2':
+    if model_name == 'effnet':
         train_dataset = DataGeneratorEffnet(
             batch=train_dataset,
             sample_rate=cfg.train.sample_rate,

@@ -4,7 +4,7 @@ import torch.nn as nn
 import torchvision
 from efficientnet_pytorch import EfficientNet
 
-from models.HigherModels import *
+from models.cnns.psla.models.HigherModels import *
 
 
 class ResNetAttention(nn.Module):

@@ -8,8 +8,8 @@ from tqdm import tqdm
 from torch.cuda.amp import autocast, GradScaler
 from transformers import get_linear_schedule_with_warmup
 
-from utils.ast_models import ASTModel
-from utils.scores import model_accuracy, model_f1_score
+from models.transformers.ast.utils.ast_models import ASTModel
+from models.transformers.ast.utils.scores import model_accuracy, model_f1_score
 
 device = ('cuda' if torch.cuda.is_available() else 'cpu')
 # Logger

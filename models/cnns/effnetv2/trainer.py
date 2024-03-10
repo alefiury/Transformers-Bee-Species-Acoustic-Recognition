@@ -1,4 +1,5 @@
 import os
+import sys
 import glob
 import logging
 
@@ -9,11 +10,11 @@ import timm
 from tqdm import tqdm
 from transformers import get_linear_schedule_with_warmup
 
-from model import Cnn_Model
-from utils.loss import PANNsLoss
-from utils.utils import Mixup, do_mixup
-from utils.shrink_perturb import shrink_perturb
-from utils.scores import model_accuracy, model_f1_score
+from models.cnns.effnetv2.model import Cnn_Model
+from models.cnns.effnetv2.utils.loss import PANNsLoss
+from models.cnns.effnetv2.utils.utils import Mixup, do_mixup
+from models.cnns.effnetv2.utils.shrink_perturb import shrink_perturb
+from models.cnns.effnetv2.utils.scores import model_accuracy, model_f1_score
 
 
 device = ('cuda' if torch.cuda.is_available() else 'cpu')

@@ -10,7 +10,8 @@ import tqdm
 import torch
 import torchaudio
 import numpy as np
-from utils.data_generator import DataGenerator
+
+from models.cnns.psla.utils.data_generator import DataGenerator
 
 
 class Singleton(type):

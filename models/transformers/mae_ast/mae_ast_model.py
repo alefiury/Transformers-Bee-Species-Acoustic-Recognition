@@ -22,7 +22,7 @@ from fairseq.models.wav2vec.wav2vec2 import (
 )
 
 from fairseq.modules import GradMultiply, LayerNorm
-from tasks.mae_ast_pretraining import (
+from models.transformers.mae_ast.tasks.mae_ast_pretraining import (
     MAE_AST_Pretraining_Task,
 )
 

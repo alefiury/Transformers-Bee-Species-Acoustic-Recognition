@@ -10,9 +10,9 @@ import torch.nn.functional as F
 from omegaconf import DictConfig
 from transformers import get_linear_schedule_with_warmup
 
-from utils.losses import BCELossModified, clip_ce
-from ast_models import ASTModel
-from utils.scores import model_accuracy, model_f1_score
+from models.transformers.ssast.utils.losses import BCELossModified, clip_ce
+from models.transformers.ssast.ast_models import ASTModel
+from models.transformers.ssast.utils.scores import model_accuracy, model_f1_score
 
 device = ('cuda' if torch.cuda.is_available() else 'cpu')
 # Logger

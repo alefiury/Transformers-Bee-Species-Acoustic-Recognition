@@ -4,7 +4,7 @@ from types import SimpleNamespace
 import torch
 import torch.nn as nn
 
-from mae_ast_model import MAE_AST
+from models.transformers.mae_ast.mae_ast_model import MAE_AST
 
 log = logging.getLogger(__name__)
 
