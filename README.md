@@ -38,7 +38,7 @@ pip install -r requirements.txt
 
 ## Dataset
 
-The dataset used for this project comprises 518 audio samples (in which each sample is divided in smaller segments) from 15 different bee species visiting blueberry flowers in Chilean orchards. The samples contain both sonication and flight buzzing events, essential for training the models.
+The dataset used for this project comprises 518 audio samples (in which each sample is divided in smaller segments) from 15 different bee species visiting blueberry flowers in Chilean orchards. The samples contain both sonication and flight buzzing events.
 
 <div align="center">
   <img src="resources/class_dist.png" alt="Training Pipeline" height="400">
