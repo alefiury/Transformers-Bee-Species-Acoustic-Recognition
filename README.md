@@ -44,6 +44,8 @@ The dataset used for this project comprises 518 audio samples (in which each sam
   <img src="resources/class_dist.png" alt="Training Pipeline" height="400">
 </div>
 
+The data can be found at: https://zenodo.org/records/14611302
+
 ## Model Training
 The repository includes the implementation of three transformer-based models:
 
