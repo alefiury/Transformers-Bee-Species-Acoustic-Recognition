@@ -1,6 +1,6 @@
 # Acoustic Recognition of Blueberry-Pollinating Bee Species
 
-This repository contains the code for the paper titled **"Transformer Models Improve the Acoustic Recognition of Crop-Pollinating Bee Species"**. The study focuses on improving the recognition of bee species through their buzzing sounds using transformer-based neural network models.
+This repository contains the code for the paper titled [**"Transformer Models Improve the Acoustic Recognition of Crop-Pollinating Bee Species"**](https://www.frontiersin.org/journals/plant-science/articles/10.3389/fpls.2023.1081050/full). The study focuses on improving the recognition of bee species through their buzzing sounds using transformer-based neural network models.
 
 ## Table of Contents
 - [Introduction](#introduction)
